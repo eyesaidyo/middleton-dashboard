@@ -1,26 +1,97 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-middleton-green: #1F434C;
+  --color-middleton-neon: #E2F358;
+  --color-middleton-denim: #EFEDE9;
+  --color-middleton-pink: #F7D3D3;
+  --color-middleton-sun: #FEECCF;
+  --color-middleton-neutral: #DAD9D9;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Font families */
+.font-figtree {
+  font-family: var(--font-figtree), sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.font-nunito-sans {
+  font-family: var(--font-nunito-sans), sans-serif;
+}
+
+/* Apply Figtree to all headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-figtree), sans-serif;
+}
+
+/* Custom Colors */
+.bg-middleton-green {
+  background-color: var(--color-middleton-green);
+}
+
+.bg-middleton-neon {
+  background-color: var(--color-middleton-neon);
+}
+
+.bg-middleton-denim {
+  background-color: var(--color-middleton-denim);
+}
+
+.bg-middleton-pink {
+  background-color: var(--color-middleton-pink);
+}
+
+.bg-middleton-sun {
+  background-color: var(--color-middleton-sun);
+}
+
+.bg-middleton-neutral {
+  background-color: var(--color-middleton-neutral);
+}
+
+.text-middleton-neon {
+  color: var(--color-middleton-neon);
+}
+
+.text-middleton-green {
+  color: var(--color-middleton-green);
+}
+
+.hover\:bg-middleton-denim:hover {
+  background-color: var(--color-middleton-denim);
+}
+
+.hover\:bg-white:hover {
+  background-color: white;
+}
+
+.hover\:text-white:hover {
+  color: white;
+}
+
+.border-middleton-green {
+  border-color: var(--color-middleton-green);
+}
+
+.hover\:border-transparent:hover {
+  border-color: transparent;
+}
+
+.hover\:border-middleton-green:hover {
+  border-color: var(--color-middleton-green);
+}
+
+/* Animations */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.animate-slide-in {
+  animation: slideIn 1s ease-out forwards;
 }
